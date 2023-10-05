@@ -1,15 +1,3 @@
-
-2.	Name server woes… I do a majority of my work NOT while on the VPN so I used google’s name server in step 2.6. but, if I’m on the VPN that results in an error whenever if something is trying to a curl/get/fetch, i.e. when I launched code from wsl for the first time using the workspace file I saw this in my console (2nd attempt after disconnecting from the VPN had no errors):
-zoe@WE43187:~/msdlive/dev/msdlive-rdm-app$ code msdlive-rdm-app.code-workspace
-Installing VS Code Server for x64 (2ccd690cbff1569e4a83d7c43d45101f817401dc)
-Downloading: 100%
-Failed
---2023-08-14 14:02:37--  https://update.code.visualstudio.com/commit:2ccd690cbff1569e4a83d7c43d45101f817401dc/server-linux-x64/stable
-Resolving update.code.visualstudio.com (update.code.visualstudio.com)... failed: Temporary failure in name resolution.
-wget: unable to resolve host address ‘update.code.visualstudio.com’
-ERROR: Failed to download https://update.code.visualstudio.com/commit:2ccd690cbff1569e4a83d7c43d45101f817401dc/server-linux-x64/stable to /home/zoe/.vscode-server/bin/2ccd690cbff1569e4a83d7c43d45101f817401dc-1692046947.tar.gz
-
-
 # Installing Docker on Windows Using WSL2, NOT Docker Desktop
 These instructions help Windows users install Docker inside a WSL2 VM, without using 
 Docker Desktop, which can be flaky when updating and has licensing fees.
