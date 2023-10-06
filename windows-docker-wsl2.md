@@ -7,7 +7,14 @@ If you have Docker Desktop currently installed, you will need to uninstall it fi
 following the rest of the steps.
 
 ## Step 1.  Install WSL2
-Install WSL2 following these instructions:  https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview
+Open powershell as admin and run the following commands
+```
+wsl --install -d Ubuntu
+```
+then once that completes:
+```
+sudo apt update
+```
 
 Per those instructions, I installed the Ubuntu terminal, which is a very nice to running
 WSL through PowerShell.
