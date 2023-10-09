@@ -146,17 +146,18 @@ Follow prompts to have WSL extension added to VS Code, you may have to restart C
 ## Step 5. Install tools in WSL
 From WSL terminal:
 
-if you need node and npm use nvm:
+For node and npm use nvm:
 https://github.com/nvm-sh/nvm#installing-and-updating
 
-if you need python and to use virtual envs:
+For python and to use virtual envs:
 ```
 sudo apt install python-is-python3
 sudo apt install python3.10-venv
 ```
 
-if you need the aws-cli:
+For aws-cli:
 (if using aws cli from within a venv be sure to activate the venv AFTER installing node)
+
 Install or update the latest version of the AWS CLI - AWS Command Line Interface (amazon.com)
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
