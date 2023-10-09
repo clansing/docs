@@ -65,11 +65,9 @@ From a WSL terminal, run these commands.
 4. Fix your IP Tables
 
     If your WSL is using Ubuntu 22.04 or Debian 10+, you need to do 1 extra step for iptables
-compatibility.  Choose option (1) to use iptables-legacy from
-the prompt that'll come up when running the command below.
+compatibility.
+Choose option (1) to use iptables-legacy
 
-    You'll also likely need to restart WSL after applying
-this, otherwise networking inside of your containers won't work.
     ```
     sudo update-alternatives --config iptables
     ```
@@ -79,16 +77,19 @@ this, otherwise networking inside of your containers won't work.
     cat /etc/os-release
     ```
 
-5. Set your Docker daemon to run on starup
+6. Set your Docker daemon to run on starup
 
     From a WSL terminal, edit `/etc/wsl.conf`
+    ```
+    sudo nano /etc/wsl.conf
+    ```
 
     Add the following to the end of the file:
     ```
     [boot]
     systemd=true
     ```
-6. Restart WSL
+7. Restart WSL
 
     From PowerShell terminal:
     ```
@@ -96,7 +97,7 @@ this, otherwise networking inside of your containers won't work.
     wsl
     ```
 
-7. Make sure systemd is running
+8. Make sure systemd is running
 
     From your new WSL terminal, run
     ```
@@ -105,7 +106,7 @@ this, otherwise networking inside of your containers won't work.
 
     If you see a bunch of services, all is well.  Hit `q` to exit.
 
-8. Make sure Docker is running
+9. Make sure Docker is running
     From your new WSL terminal, run
     ```
     ps aux | grep docker
@@ -116,7 +117,7 @@ this, otherwise networking inside of your containers won't work.
     root         263  0.6  0.1 5284636 139760 ?      Ssl  Sep20 144:46 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
     ```
 
-## Step 4. Move your code to WSL
+## Step 4a. If you've already got code cloned and want to move your code to WSL
 All of your code has to be migrated under the WSL VM in order for you to use it.  
 In Explorer, you can see it at the bottom under Linux/Ubuntu
 
@@ -132,3 +133,32 @@ For example, to link your .ssh folder (known hosts and keys), from your WSL term
 ```
 ln -s /mnt/c/Users/$USER/.ssh ~/.ssh
 ```
+
+## Step 4b. Clone code from WSL
+VS code will make your life easier when it comes to git commands and credentials so from wsl terminal do:
+```
+mkdir test
+cd test
+code .
+```
+Follow prompts to have WSL extension added to VS Code, you may have to restart Code. Then open bash terminal in vs code to execute the git clone commands, follow prompts and click 'ok' in browser window that will eventually open to allow VS Code permissions to git.
+
+## Step 5. Install tools in WSL
+From WSL terminal:
+
+if you need node and npm:
+```
+sudo apt install nodejs npm
+```
+
+if you need python and to use virtual envs:
+```
+sudo apt install python-is-python3
+sudo apt install python3.10-venv
+```
+
+if you need the aws-cli:
+Install or update the latest version of the AWS CLI - AWS Command Line Interface (amazon.com)
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+
