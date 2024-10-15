@@ -147,7 +147,7 @@ Follow prompts to have WSL extension added to VS Code, you may have to restart C
 From WSL terminal:
 
 For node and npm use nvm:
-https://github.com/nvm-sh/nvm#installing-and-updating
+https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl
 
 For python and to use virtual envs:
 ```
